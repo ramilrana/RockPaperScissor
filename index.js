@@ -1,7 +1,7 @@
 let humanScore = 0
 let computerScore = 0
 let draw = 0
-
+console.log("Round: 1")
 let getHumanChoice = () => {
   let choiceH
   sign = window.prompt("Rock Paper or Scissors?").toLowerCase().trim()
@@ -100,28 +100,12 @@ let playRound = (human, computer) => {
   }
 }
 
-if (humanScore >= 3) {
-  alert("You have lost the match")
-  console.log("=========Computer Won=============")
-  console.log("Total score:")
-  console.log("Draw: " + draw)
-  console.log("You: " + humanScore)
-  console.log("Computer: " + computerScore)
-} else if (computerScore >= 3) {
-  alert("You have lost the match")
-  console.log("=========Computer Won=============")
-  console.log("Total score:")
-  console.log("Draw: " + draw)
-  console.log("You: " + humanScore)
-  console.log("Computer: " + computerScore)
-}
-
 for (let i = 1; i <= 5; i++) {
   let hum = getHumanChoice()
   let comp = getComputerChoice()
   playRound(hum, comp)
   if (i < 5) {
-    console.log("Current round: " + (i + 1))
+    console.log("Round: " + (i + 1))
   }
   if (hum == "") {
     i--
@@ -155,11 +139,8 @@ else if (humanScore < computerScore) {
   console.log("No result")
 }
 
-let playAgain = document
-  .getElementById("playAgain")
-  .addEventListener("click", loadPage)
+document.getElementById("playAgain").addEventListener("click", loadPage)
 
 function loadPage() {
-  //   location.reload()
-  console.log("wew")
+  location.reload()
 }
