@@ -4,7 +4,7 @@ let draw = 0
 console.log("Round: 1")
 let getHumanChoice = () => {
   let choiceH
-  sign = window.prompt("Rock Paper or Scissors?").toLowerCase().trim()
+  // sign = window.prompt("Rock Paper or Scissors?").toLowerCase().trim()
   if (sign == "rock") {
     choiceH = 1
   } else if (sign == "paper") {
