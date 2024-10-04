@@ -23,7 +23,7 @@ li a {
   height: 80vh;
   margin-top: 4em;
   line-height: 2rem;
-  color: rgb(27, 27, 27);
+  color: rgb(49, 49, 49);
 }
 #welcome h2 {
   font-size: 5em;
@@ -42,7 +42,7 @@ footer {
   position: absolute;
   bottom: 0;
   height: 2.5rem;
-  padding-top: 14px;
+  padding-top: 10px;
 }
 #footerDiv {
   text-align: center;
@@ -54,16 +54,45 @@ footer {
 }
 
 #playBtn {
-  padding: 0.5rem;
-  width: 8rem;
+  padding: 1rem;
+  width: 10rem;
   border-radius: 10px;
   outline: 1px solid rgba(165, 42, 42, 0.801);
   border: none;
   font-size: 1rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #playBtn:hover {
-  cursor: pointer;
   background-color: rgba(165, 42, 42, 0.801);
   color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(165, 42, 42, 0.801);
+}
+
+#playBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#playBtn span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+}
+
+#playBtn:hover span {
+  padding-right: 25px;
+}
+
+#playBtn:hover span:after {
+  opacity: 1;
+  right: 0;
 }
