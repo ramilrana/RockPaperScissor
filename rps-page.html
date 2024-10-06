@@ -8,9 +8,55 @@
     <title>Rock Paper Scissor</title>
   </head>
   <body>
-    <button id="back">Go back</button>
-    <button onclick="swalClick()">Click me</button>
-    <p>wew</p>
+    <header>
+      <div class="headerTitle">
+        <p id="rps">
+          <span class="rpsText">R</span>OCK <span class="rpsText">P</span>APER
+          <span class="rpsText">S</span>CISSOR
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <div id="leftSide"><button id="back">Back to home</button></div>
+      <div id="rightSide">
+        <div id="handShow">
+          <div id="playerPick">
+            <h2>You</h2>
+            <div id="pFrame"></div>
+            <input type="text" id="pText" class="textInputPick" disabled />
+          </div>
+          <div id="separator"><p id="versus">VS</p></div>
+          <div id="computerPick">
+            <h2>Computer</h2>
+            <div id="cFrame"></div>
+            <input type="text" id="cText" class="textInputPick" disabled />
+          </div>
+        </div>
+        <div id="start">
+          <div>
+            <label for="rounds">SELECT NUMBER OF ROUNDS: &nbsp;</label>
+            <select name="rounds" id="rounds">
+              <option value="1">1</option>
+              <option value="3">3</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button id="startBTN">Start</button>
+        </div>
+        <div id="buttonGroup">
+          <button class="rpsBTN">ROCK</button>
+          <button class="rpsBTN">PAPER</button>
+          <button class="rpsBTN">SCISSOR</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div id="footerDiv">
+        <p>@ Amanob 2024</p>
+      </div>
+    </footer>
   </body>
 </html>
 

@@ -1,3 +1,10 @@
+:root {
+  --primary: rgba(165, 42, 42, 0.801); /* Example color */
+  --secondary: rgb(49, 49, 49);
+  --sucess: rgba(23, 156, 23, 0.76);
+  --gray: rgba(145, 145, 145, 0.356);
+}
+
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
@@ -39,8 +46,6 @@ li a {
 footer {
   background-color: rgb(216, 216, 216);
   width: 100%;
-  position: absolute;
-  bottom: 0;
   height: 2.5rem;
   padding-top: 10px;
 }
@@ -50,14 +55,14 @@ footer {
 .rpsText {
   font-size: 4rem;
   font-weight: bold;
-  color: rgba(165, 42, 42, 0.801);
+  color: var(--primary);
 }
 
 #playBtn {
   padding: 1rem;
   width: 10rem;
   border-radius: 10px;
-  outline: 1px solid rgba(165, 42, 42, 0.801);
+  outline: 1px solid var(--primary);
   border: none;
   font-size: 1rem;
   transition: all 0.5s;
@@ -67,10 +72,9 @@ footer {
 }
 
 #playBtn:hover {
-  background-color: rgba(165, 42, 42, 0.801);
+  background-color: var(--primary);
   color: white;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(165, 42, 42, 0.801);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 var(--primary);
 }
 
 #playBtn span {
@@ -95,4 +99,144 @@ footer {
 #playBtn:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.headerTitle {
+  text-align: center;
+  border-bottom: 1px solid rgba(145, 145, 145, 0.356);
+  padding-bottom: 1rem;
+}
+
+#leftSide {
+  /* background-color: red; */
+  width: 30%;
+  border-right: 1px solid rgba(128, 128, 128, 0.555);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+#rightSide {
+  /* background-color: blue; */
+  width: 70%;
+}
+
+main {
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+}
+
+#handShow {
+  border-bottom: 1px solid rgba(145, 145, 145, 0.356);
+  padding-bottom: 1rem;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#start {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+#startBTN {
+  padding: 0.5rem;
+  width: 6rem;
+  cursor: pointer;
+  background-color: rgba(23, 156, 23, 0.76);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+}
+#startBTN:hover {
+  box-shadow: rgba(23, 156, 23, 0.76) 0px 5px 15px;
+  transition: all 0.5s;
+}
+
+.rpsBTN {
+  padding: 1rem;
+  width: 8rem;
+  cursor: pointer;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+}
+.rpsBTN:hover {
+  background-color: rgba(228, 92, 92, 0.801);
+  transition: all 0.5s;
+}
+
+#buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#rounds {
+  width: 4rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.4rem;
+  border: none;
+  text-align: center;
+  box-shadow: rgba(85, 85, 85, 0.3) 0px 0px 0px 3px;
+}
+#rounds:hover {
+  background-color: rgba(78, 78, 78, 0.76);
+  color: white;
+  transition: all 0.5s;
+}
+
+#playerPick {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 12rem;
+  gap: 2rem;
+  text-align: center;
+}
+#pFrame {
+  padding: 4rem;
+  border: 1px dashed gray;
+  width: 12rem;
+  height: 12rem;
+}
+
+#computerPick {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 12rem;
+  gap: 2rem;
+  text-align: center;
+}
+#cFrame {
+  padding: 4rem;
+  border: 1px dashed gray;
+  width: 12rem;
+  height: 12rem;
+}
+
+.textInputPick {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 0.5px solid rgba(128, 128, 128, 0.493);
+}
+
+#versus {
+  font-weight: bold;
+  font-size: 4rem;
+  color: rgb(49, 49, 49);
+  text-shadow: 0px 0px 5px var(--primary);
 }
