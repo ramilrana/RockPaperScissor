@@ -9,7 +9,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
   margin: 0;
-  color: var(--secondary);
 }
 
 li a {
@@ -101,6 +100,12 @@ footer {
   opacity: 1;
   right: 0;
 }
+header {
+  box-shadow: rgba(145, 145, 145, 0.76) 2px 1px 10px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
 
 .headerTitle {
   text-align: center;
@@ -109,10 +114,10 @@ footer {
 }
 
 #leftSide {
-  /* background-color: red; */
   width: 30%;
-  border-right: 1px solid rgba(128, 128, 128, 0.555);
   padding: 2rem;
+  background-color: var(--primary);
+  padding-top: 4rem;
 }
 #insideLeft {
   width: 100%;
@@ -121,31 +126,54 @@ footer {
   gap: 2rem;
   height: auto;
 }
-#points {
-  width: 100%;
-  text-align: center;
-  min-height: 10rem;
-  height: auto;
-  border: 1px dashed gray;
-  padding: 1rem;
-}
-#summary {
-  text-align: center;
-  width: 100%;
-  min-height: 10rem;
-  height: auto;
-  border: 1px dashed gray;
-  padding: 1rem;
+#insideLeft h3 {
+  color: rgb(56, 56, 56);
 }
 
-.insideBox {
-  margin-top: 0.8rem;
-  background-color: red;
+#insideLeft ul {
+  list-style-type: none; /* Optional: Removes bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+#insideLeft li {
+  margin: 0.5rem 0;
+  border-bottom: 1px solid rgba(228, 228, 228, 0.519);
+}
+
+.pointDiv {
+  width: 100%;
+  text-align: center;
+  min-height: 10rem;
+  height: auto;
+  max-height: 15rem;
+  border: 1px dashed gray;
+  background-color: rgba(246, 187, 187, 0.801);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+}
+#points {
+  display: flex;
+  justify-content: space-around;
+}
+#summary {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+hr.insideBox {
+  border: 1px solid white;
+  margin: 0.8rem;
 }
 
 #rightSide {
-  /* background-color: blue; */
   width: 70%;
+  padding-top: 4rem;
 }
 
 main {
@@ -164,6 +192,17 @@ main {
   align-items: center;
 }
 
+.toDisable:disabled {
+  cursor: not-allowed; /* Changes cursor to indicate it's disabled */
+  background-color: gray; /* Optional: style for disabled state */
+  color: white;
+}
+
+.toDisable:disabled:hover {
+  background-color: gray; /* No hover effect on disabled buttons */
+  color: white; /* Keeps disabled button color */
+}
+
 #start {
   display: flex;
   justify-content: center;
@@ -173,7 +212,7 @@ main {
   margin-top: 2rem;
 }
 
-#startBTN {
+.startBTN {
   padding: 0.5rem;
   width: 6rem;
   cursor: pointer;
@@ -182,9 +221,30 @@ main {
   border-radius: 0.5rem;
   color: white;
 }
-#startBTN:hover {
+.startBTN:hover {
   box-shadow: rgba(23, 156, 23, 0.76) 0px 5px 15px;
   transition: all 0.5s;
+}
+
+.resetBTN {
+  padding: 0.5rem;
+  width: 6rem;
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.784);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+}
+.resetBTN:hover {
+  box-shadow: rgba(255, 0, 0, 0.784) 0px 5px 15px;
+  transition: all 0.5s;
+}
+
+/* Specific rule to ensure the hover doesn't apply to disabled .startBTN */
+.startBTN.toDisable:disabled:hover {
+  box-shadow: none; /* Remove hover shadow for disabled start button */
+  background-color: gray; /* Ensure background is gray */
+  transition: none; /* Remove transition for disabled */
 }
 
 .rpsBTN {
@@ -209,7 +269,7 @@ main {
 }
 
 #rounds {
-  width: 4rem;
+  width: 8rem;
   padding: 0.3rem;
   cursor: pointer;
   outline: none;
@@ -217,11 +277,6 @@ main {
   border: none;
   text-align: center;
   box-shadow: rgba(85, 85, 85, 0.3) 0px 0px 0px 3px;
-}
-#rounds:hover {
-  background-color: rgba(78, 78, 78, 0.76);
-  color: white;
-  transition: all 0.5s;
 }
 
 #playerPick {
@@ -237,6 +292,10 @@ main {
   border: 1px dashed gray;
   width: 12rem;
   height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
 }
 
 #computerPick {
@@ -252,6 +311,10 @@ main {
   border: 1px dashed gray;
   width: 12rem;
   height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
 }
 
 .textInputPick {
@@ -266,4 +329,10 @@ main {
   font-size: 4rem;
   color: rgb(49, 49, 49);
   text-shadow: 0px 0px 5px var(--primary);
+}
+
+/* For Rock, paper and scissor picture */
+
+.rpsImage {
+  width: 8rem;
 }

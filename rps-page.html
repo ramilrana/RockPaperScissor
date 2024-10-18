@@ -21,18 +21,41 @@
       <div id="leftSide">
         <!-- <button id="back">Back to home</button> -->
         <div id="insideLeft">
-          <div id="points">
+          <div class="pointDiv">
             <h3>Total Points:</h3>
             <hr class="insideBox" />
-            <ul>
-              <li>HUMAN:</li>
-              <li>COMPUTER:</li>
-              <li>DRAW:</li>
-            </ul>
+            <div id="points">
+              <div>
+                <ul>
+                  <li><span>HUMAN:</span></li>
+                  <li>
+                    <span>COMPUTER:</span>
+                  </li>
+                  <li><span>DRAW:</span></li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li><span id="humanScore">1</span></li>
+                  <li>
+                    <span id="computerScore">2</span>
+                  </li>
+                  <li><span id="drawScore">1</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div id="summary">
+
+          <div class="pointDiv">
             <h3>Game Summary:</h3>
+            <br />
+            <p>Rounds:</p>
             <hr class="insideBox" />
+            <div id="summary">
+              <ul id="gameSummary">
+                <li>Game 1:</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -40,13 +63,57 @@
         <div id="handShow">
           <div id="playerPick">
             <h2>You</h2>
-            <div id="pFrame"></div>
+            <div id="pFrame">
+              <img
+                src="assets/paper.png"
+                alt="paper emoji"
+                class="rpsImage"
+                id="pPaper"
+                hidden
+              />
+              <img
+                src="assets/rock.png"
+                alt="rock emoji"
+                class="rpsImage"
+                id="pRock"
+                hidden
+              />
+              <img
+                src="assets/scissor.png"
+                alt="scissor emoji"
+                class="rpsImage"
+                id="pScissor"
+                hidden
+              />
+            </div>
             <input type="text" id="pText" class="textInputPick" disabled />
           </div>
           <div id="separator"><p id="versus">VS</p></div>
           <div id="computerPick">
             <h2>Computer</h2>
-            <div id="cFrame"></div>
+            <div id="cFrame">
+              <img
+                src="assets/paper.png"
+                alt="paper emoji"
+                class="rpsImage"
+                id="cPaper"
+                hidden
+              />
+              <img
+                src="assets/rock.png"
+                alt="rock emoji"
+                class="rpsImage"
+                id="cRock"
+                hidden
+              />
+              <img
+                src="assets/scissor.png"
+                alt="scissor emoji"
+                class="rpsImage"
+                id="cScissor"
+                hidden
+              />
+            </div>
             <input type="text" id="cText" class="textInputPick" disabled />
           </div>
         </div>
@@ -54,17 +121,19 @@
           <div>
             <label for="rounds">SELECT NUMBER OF ROUNDS: &nbsp;</label>
             <select name="rounds" id="rounds">
+              <option value="" disabled selected>--Please select--</option>
               <option value="1">1</option>
               <option value="3">3</option>
               <option value="5">5</option>
             </select>
           </div>
-          <button id="startBTN">Start</button>
+          <button id="startGame" class="startBTN toDisable">Start</button>
+          <button id="resetGame" class="resetBTN">Reset</button>
         </div>
         <div id="buttonGroup">
-          <button class="rpsBTN">ROCK</button>
-          <button class="rpsBTN">PAPER</button>
-          <button class="rpsBTN">SCISSOR</button>
+          <button class="rpsBTN toDisable" id="rockPick">ROCK</button>
+          <button class="rpsBTN toDisable" id="paperPick">PAPER</button>
+          <button class="rpsBTN toDisable" id="scissorPick">SCISSOR</button>
         </div>
       </div>
     </main>
