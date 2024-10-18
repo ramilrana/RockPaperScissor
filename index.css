@@ -322,6 +322,8 @@ main {
   border-radius: 0.5rem;
   outline: none;
   border: 0.5px solid rgba(128, 128, 128, 0.493);
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 #versus {
@@ -335,4 +337,15 @@ main {
 
 .rpsImage {
   width: 8rem;
+}
+
+.hidden {
+  opacity: 0; /* Make it transparent */
+  visibility: hidden; /* Prevent it from blocking interactions */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Transition for opacity and visibility */
+}
+
+.visible {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Allow interactions */
 }

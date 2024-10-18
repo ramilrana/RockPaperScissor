@@ -71,4 +71,75 @@ function reloadPage() {
   };
 }
 
-function playerPick(choice) {}
+function playerPick(button) {
+  generateComputerPick();
+  document.getElementById("cText").value = generateComputerPick();
+
+  showPersonPick(button.id);
+  document.getElementById("pText").value = showPersonPick(button.id);
+}
+
+function generateComputerPick() {
+  let cRockPick = document.getElementById("cRock");
+  let cPaperPick = document.getElementById("cPaper");
+  let cScissorPick = document.getElementById("cScissor");
+
+  let result;
+  let choiceC = Math.floor(Math.random() * 3) + 1;
+
+  switch (choiceC) {
+    case 1:
+      result = "Rock";
+      cRockPick.hidden = false;
+      cScissorPick.hidden = true;
+      cPaperPick.hidden = true;
+      break;
+    case 2:
+      result = "Paper";
+      cPaperPick.hidden = false;
+      cRockPick.hidden = true;
+      cScissorPick.hidden = true;
+      break;
+    case 3:
+      result = "Scissor";
+      cScissorPick.hidden = false;
+      cPaperPick.hidden = true;
+      cRockPick.hidden = true;
+      break;
+    default:
+      result = "out of range";
+  }
+  return result;
+}
+
+function showPersonPick(buttonID) {
+  let result;
+
+  let pRockPick = document.getElementById("pRock");
+  let pPaperPick = document.getElementById("pPaper");
+  let pScissorPick = document.getElementById("pScissor");
+
+  switch (buttonID) {
+    case "rockPick":
+      result = "Rock";
+      pRockPick.hidden = false;
+      pScissorPick.hidden = true;
+      pPaperPick.hidden = true;
+      break;
+    case "paperPick":
+      result = "Paper";
+      pPaperPick.hidden = false;
+      pRockPick.hidden = true;
+      pScissorPick.hidden = true;
+      break;
+    case "scissorPick":
+      result = "Scissor";
+      pScissorPick.hidden = false;
+      pPaperPick.hidden = true;
+      pRockPick.hidden = true;
+      break;
+    default:
+      result = "out of range";
+  }
+  return result;
+}
