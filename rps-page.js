@@ -6,6 +6,10 @@ window.onload = function () {
   reloadPage()
 }
 
+let humanScore = 0
+let computerScore = 0
+let draw = 0
+
 const startGameBTN = document.getElementById("startGame")
 const roundSelect = document.getElementById("rounds")
 const resetBTN = document.getElementById("resetGame")
@@ -77,18 +81,38 @@ function reloadPage() {
 }
 
 function playerPick(button) {
+  generateComputerPick()
   document.getElementById("cText").value = generateComputerPick()
+
+  showPersonPick(button.id)
   document.getElementById("pText").value = showPersonPick(button.id)
 
-  let personPick = showPersonPick(button.id)
-  let computerPick = generateComputerPick()
+  let personPick = showPersonPick(button.id).toLowerCase()
+  let computerPick = generateComputerPick().toLowerCase()
 
-  let start = 1
+  console.log("ComputerPick: " + computerPick)
+  console.log("personPick: " + personPick)
 
-  while (start <= numberOfRounds) {
-    alert("wew")
-    start++
+  if (
+    (personPick === "rock" && computerPick === "scissor") ||
+    (personPick === "paper" && computerPick === "rock") ||
+    (personPick === "scissor" && computerPick === "paper")
+  ) {
+    alert("You won")
+    humanScore++
+  } else if (
+    (computerPick === "rock" && personPick === "scissor") ||
+    (computerPick === "paper" && personPick === "rock") ||
+    (computerPick === "scissor" && personPick === "paper")
+  ) {
+    alert("You lost")
+    computerScore++
+  } else {
+    alert("Draw")
+    draw++
   }
+
+  console.log(humanScore + " - " + computerScore + " - " + draw)
 }
 
 function generateComputerPick() {
