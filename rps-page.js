@@ -1,25 +1,29 @@
 window.onload = function () {
-  disableButton(".toDisable", true);
-  getRounds();
-  toStart();
-  hideResetButton(true);
-  reloadPage();
-};
+  disableButton(".toDisable", true)
+  getRounds()
+  toStart()
+  hideResetButton(true)
+  reloadPage()
+}
 
-const startGameBTN = document.getElementById("startGame");
-const roundSelect = document.getElementById("rounds");
-const resetBTN = document.getElementById("resetGame");
+const startGameBTN = document.getElementById("startGame")
+const roundSelect = document.getElementById("rounds")
+const resetBTN = document.getElementById("resetGame")
 
-let rockPick = document.getElementById("rockPick");
-let paperPick = document.getElementById("paperPick");
-let scissorPick = document.getElementById("scissorPick");
+// let rockPick = document.getElementById("rockPick")
+// let paperPick = document.getElementById("paperPick")
+// let scissorPick = document.getElementById("scissorPick")
+
+let personScore = 0
+let computerScore = 0
+let draw = 0
+let numberOfRounds = 0
 
 function getRounds() {
   roundSelect.onchange = function () {
-    console.log(roundSelect.value);
-    document.querySelector(".startBTN").disabled = false;
-    document.getElementById("rounds").style.width = "4rem";
-  };
+    document.querySelector(".startBTN").disabled = false
+    document.getElementById("rounds").style.width = "4rem"
+  }
 }
 
 function toStart() {
@@ -34,23 +38,24 @@ function toStart() {
       confirmButtonText: "Confirm",
     }).then((result) => {
       if (result.isConfirmed) {
-        disableButton(".toDisable", false); // Enable buttons
-        startGameBTN.hidden = true;
-        roundSelect.disabled = true;
-        hideResetButton(false);
+        disableButton(".toDisable", false) // Enable buttons
+        startGameBTN.hidden = true
+        roundSelect.disabled = true
+        hideResetButton(false)
+        numberOfRounds = roundSelect.value
       }
-    });
-  };
+    })
+  }
 }
 
 function disableButton(buttonClass, toDisable) {
-  const buttons = document.querySelectorAll(buttonClass);
+  const buttons = document.querySelectorAll(buttonClass)
   buttons.forEach((button) => {
-    button.disabled = toDisable;
-  });
+    button.disabled = toDisable
+  })
 }
 function hideResetButton(toHide) {
-  resetBTN.hidden = toHide; // Hides the button
+  resetBTN.hidden = toHide // Hides the button
 }
 
 function reloadPage() {
@@ -65,81 +70,89 @@ function reloadPage() {
       confirmButtonText: "Confirm",
     }).then((result) => {
       if (result.isConfirmed) {
-        location.reload();
+        location.reload()
       }
-    });
-  };
+    })
+  }
 }
 
 function playerPick(button) {
-  generateComputerPick();
-  document.getElementById("cText").value = generateComputerPick();
+  document.getElementById("cText").value = generateComputerPick()
+  document.getElementById("pText").value = showPersonPick(button.id)
 
-  showPersonPick(button.id);
-  document.getElementById("pText").value = showPersonPick(button.id);
+  let personPick = showPersonPick(button.id)
+  let computerPick = generateComputerPick()
+
+  let start = 1
+
+  while (start <= numberOfRounds) {
+    alert("wew")
+    start++
+  }
 }
 
 function generateComputerPick() {
-  let cRockPick = document.getElementById("cRock");
-  let cPaperPick = document.getElementById("cPaper");
-  let cScissorPick = document.getElementById("cScissor");
+  let cRockPick = document.getElementById("cRock")
+  let cPaperPick = document.getElementById("cPaper")
+  let cScissorPick = document.getElementById("cScissor")
 
-  let result;
-  let choiceC = Math.floor(Math.random() * 3) + 1;
+  let result
+  let choiceC = Math.floor(Math.random() * 3) + 1
+  console.log("sagot - " + choiceC)
 
   switch (choiceC) {
     case 1:
-      result = "Rock";
-      cRockPick.hidden = false;
-      cScissorPick.hidden = true;
-      cPaperPick.hidden = true;
-      break;
+      result = "Rock"
+      cRockPick.hidden = false
+      cScissorPick.hidden = true
+      cPaperPick.hidden = true
+      break
     case 2:
-      result = "Paper";
-      cPaperPick.hidden = false;
-      cRockPick.hidden = true;
-      cScissorPick.hidden = true;
-      break;
+      result = "Paper"
+      cPaperPick.hidden = false
+      cRockPick.hidden = true
+      cScissorPick.hidden = true
+      break
     case 3:
-      result = "Scissor";
-      cScissorPick.hidden = false;
-      cPaperPick.hidden = true;
-      cRockPick.hidden = true;
-      break;
+      result = "Scissor"
+      cScissorPick.hidden = false
+      cPaperPick.hidden = true
+      cRockPick.hidden = true
+      break
     default:
-      result = "out of range";
+      result = "out of range"
   }
-  return result;
+  return result
 }
 
 function showPersonPick(buttonID) {
-  let result;
+  let result
 
-  let pRockPick = document.getElementById("pRock");
-  let pPaperPick = document.getElementById("pPaper");
-  let pScissorPick = document.getElementById("pScissor");
+  let pRockPick = document.getElementById("pRock")
+  let pPaperPick = document.getElementById("pPaper")
+  let pScissorPick = document.getElementById("pScissor")
 
   switch (buttonID) {
     case "rockPick":
-      result = "Rock";
-      pRockPick.hidden = false;
-      pScissorPick.hidden = true;
-      pPaperPick.hidden = true;
-      break;
+      result = "Rock"
+      pRockPick.hidden = false
+      pScissorPick.hidden = true
+      pPaperPick.hidden = true
+      break
     case "paperPick":
-      result = "Paper";
-      pPaperPick.hidden = false;
-      pRockPick.hidden = true;
-      pScissorPick.hidden = true;
-      break;
+      result = "Paper"
+      pPaperPick.hidden = false
+      pRockPick.hidden = true
+      pScissorPick.hidden = true
+      break
     case "scissorPick":
-      result = "Scissor";
-      pScissorPick.hidden = false;
-      pPaperPick.hidden = true;
-      pRockPick.hidden = true;
-      break;
+      result = "Scissor"
+      pScissorPick.hidden = false
+      pPaperPick.hidden = true
+      pRockPick.hidden = true
+      break
     default:
-      result = "out of range";
+      result = "out of range"
   }
-  return result;
+  return result
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
+
 :root {
   --primary: rgba(165, 42, 42, 0.801); /* Example color */
   --secondary: rgb(49, 49, 49);
@@ -5,10 +7,18 @@
   --gray: rgba(145, 145, 145, 0.356);
 }
 
+html {
+  font-size: 16px;
+}
+body {
+  min-height: 100vh;
+  position: relative;
+}
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  font-family: "Playwrite GB S", cursive;
 }
 
 li a {
@@ -40,20 +50,24 @@ li a {
 #rps {
   letter-spacing: 1.5rem;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 footer {
   background-color: rgb(216, 216, 216);
-  width: 100%;
   height: 2.5rem;
   padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 #footerDiv {
   text-align: center;
 }
 .rpsText {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   color: var(--primary);
 }
@@ -105,12 +119,13 @@ header {
   position: sticky;
   top: 0;
   background-color: white;
+  height: 15vh;
+  text-align: center;
 }
 
 .headerTitle {
   text-align: center;
-  border-bottom: 1px solid rgba(145, 145, 145, 0.356);
-  padding-bottom: 1rem;
+  font-size: 1rem;
 }
 
 #leftSide {
@@ -147,15 +162,18 @@ header {
 .pointDiv {
   width: 100%;
   text-align: center;
-  min-height: 10rem;
-  height: auto;
-  max-height: 15rem;
   border: 1px dashed gray;
   background-color: rgba(246, 187, 187, 0.801);
   padding: 1rem;
   border-radius: 1rem;
   color: white;
+  font-size: 0.8rem;
 }
+#scoreSummary {
+  height: 13rem;
+  overflow: auto;
+}
+
 #points {
   display: flex;
   justify-content: space-around;
@@ -173,20 +191,19 @@ hr.insideBox {
 
 #rightSide {
   width: 70%;
-  padding-top: 4rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
 }
 
 main {
   display: flex;
-  height: 95vh;
   justify-content: center;
+  height: 90vh;
 }
 
 #handShow {
   border-bottom: 1px solid rgba(145, 145, 145, 0.356);
   padding-bottom: 2rem !important;
-  padding: 1rem;
-
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -210,10 +227,11 @@ main {
   align-items: center;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  font-size: 0.8rem !important;
 }
 
 .startBTN {
-  padding: 0.5rem;
+  padding: 0.3rem;
   width: 6rem;
   cursor: pointer;
   background-color: rgba(23, 156, 23, 0.76);
@@ -248,7 +266,7 @@ main {
 }
 
 .rpsBTN {
-  padding: 1rem;
+  padding: 0.4rem;
   width: 8rem;
   cursor: pointer;
   background-color: var(--primary);
@@ -269,7 +287,7 @@ main {
 }
 
 #rounds {
-  width: 8rem;
+  width: fit-content;
   padding: 0.3rem;
   cursor: pointer;
   outline: none;
@@ -322,7 +340,7 @@ main {
   border-radius: 0.5rem;
   outline: none;
   border: 0.5px solid rgba(128, 128, 128, 0.493);
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   text-align: center;
 }
 
