@@ -3,18 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Rock Paper Scissor</title>
   </head>
   <body>
-    <p style="text-align: center">Rock Paper and Scissor</p>
-    <div style="display: flex; justify-content: center">
-      <button
-        id="playAgain"
-        type="button"
-        style="padding: 10px; border-radius: 10px; cursor: pointer"
-      >
-        Click to play again
-      </button>
+    <div id="notSupported" hidden>
+      <p>This game does not support smaller screen</p>
+    </div>
+    <div id="supported">
+      <header>
+        <div class="headerTitle">
+          <p id="rps">
+            <span class="rpsText">R</span>OCK <span class="rpsText">P</span>APER
+            <span class="rpsText">S</span>CISSOR
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <div id="welcome">
+          <h2>WELCOME TO</h2>
+          <p id="rps">
+            <span class="rpsText">R</span>OCK <span class="rpsText">P</span>APER
+            <span class="rpsText">S</span>CISSOR
+          </p>
+          <br />
+          <p>
+            "Do You Dare to Challenge the Computer?" <br />
+            "Rock, Paper, Scissors – Can You Outsmart the Machine?" <br />
+            "Feel the Thrill! Test Your Luck and Strategy Now!"
+          </p>
+          <br />
+          <button id="playBtn"><span>Play Now!</span></button>
+        </div>
+      </main>
+      <footer>
+        <div id="footerDiv">
+          <p>@ Amanob 2024</p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

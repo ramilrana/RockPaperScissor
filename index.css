@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
+
+:root {
+  --primary: rgba(165, 42, 42, 0.801); /* Example color */
+  --secondary: rgb(49, 49, 49);
+  --sucess: rgba(23, 156, 23, 0.76);
+  --gray: rgba(145, 145, 145, 0.356);
+}
+
+html {
+  font-size: 16px;
+}
+body {
+  min-height: 100vh;
+  position: relative;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Playwrite GB S", cursive;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+li {
+  float: left;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+#gameSummary li {
+  font-weight: normal;
+}
+
+#totalRounds {
+  background-color: rgba(165, 42, 42, 0.801);
+  color: white;
+  border-radius: 1rem;
+  margin: 0 1rem;
+  padding: 0.3rem 0;
+  width: auto;
+}
+
+#welcome {
+  text-align: center;
+  height: 70vh;
+  margin-top: 2em;
+  line-height: 2rem;
+  color: rgb(49, 49, 49);
+}
+#welcome h2 {
+  font-size: 5em;
+  padding: 1em;
+}
+
+#rps {
+  letter-spacing: 1.5rem;
+  font-weight: bold;
+}
+
+footer {
+  background-color: rgb(216, 216, 216);
+  height: 2.5rem;
+  padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+#footerDiv {
+  text-align: center;
+}
+.rpsText {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+#playBtn {
+  padding: 1rem;
+  width: 10rem;
+  border-radius: 10px;
+  outline: 1px solid var(--primary);
+  border: none;
+  font-size: 1rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#playBtn:hover {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 var(--primary);
+}
+
+#playBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#playBtn span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+}
+
+#playBtn:hover span {
+  padding-right: 25px;
+}
+
+#playBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+header {
+  box-shadow: rgba(145, 145, 145, 0.76) 2px 1px 10px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  text-align: center;
+  padding: 0.2rem 0;
+}
+
+.headerTitle {
+  text-align: center;
+  font-size: 1rem;
+}
+
+#leftSide {
+  width: 30%;
+  padding: 2rem;
+  background-color: var(--primary);
+  overflow: auto;
+  padding-bottom: 1rem;
+}
+#insideLeft {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: auto;
+}
+#insideLeft h3 {
+  color: rgb(56, 56, 56);
+}
+
+#insideLeft ul {
+  list-style-type: none; /* Optional: Removes bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+#insideLeft li {
+  margin: 0.5rem 0;
+  border-bottom: 1px solid rgba(228, 228, 228, 0.519);
+}
+
+.pointDiv {
+  width: 100%;
+  text-align: center;
+  border: 1px dashed gray;
+  background-color: rgba(246, 187, 187, 0.801);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: var(--secondary);
+  font-size: 0.8rem;
+}
+#scoreSummary {
+  height: 14rem;
+  overflow: auto;
+}
+
+#points {
+  display: flex;
+  justify-content: space-around;
+}
+#summary {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+hr.insideBox {
+  border: 1px solid white;
+  margin: 0.8rem;
+}
+
+#rightSide {
+  width: 70%;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  overflow: auto;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+}
+
+#handShow {
+  border-bottom: 1px solid rgba(145, 145, 145, 0.356);
+  padding-bottom: 2rem !important;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.toDisable:disabled {
+  cursor: not-allowed; /* Changes cursor to indicate it's disabled */
+  background-color: gray; /* Optional: style for disabled state */
+  color: white;
+}
+
+.toDisable:disabled:hover {
+  background-color: gray; /* No hover effect on disabled buttons */
+  color: white; /* Keeps disabled button color */
+}
+
+#start {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-size: 0.8rem !important;
+}
+
+.startBTN {
+  padding: 0.3rem;
+  width: 6rem;
+  cursor: pointer;
+  background-color: rgba(23, 156, 23, 0.76);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+}
+.startBTN:hover {
+  box-shadow: rgba(23, 156, 23, 0.76) 0px 5px 15px;
+  transition: all 0.5s;
+}
+
+.resetBTN {
+  padding: 0.5rem;
+  width: 6rem;
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.784);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+}
+.resetBTN:hover {
+  box-shadow: rgba(255, 0, 0, 0.784) 0px 5px 15px;
+  transition: all 0.5s;
+}
+
+/* Specific rule to ensure the hover doesn't apply to disabled .startBTN */
+.startBTN.toDisable:disabled:hover {
+  box-shadow: none; /* Remove hover shadow for disabled start button */
+  background-color: gray; /* Ensure background is gray */
+  transition: none; /* Remove transition for disabled */
+}
+
+.rpsBTN {
+  padding: 0.4rem;
+  width: 8rem;
+  cursor: pointer;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+}
+.rpsBTN:hover {
+  background-color: rgba(228, 92, 92, 0.801);
+  transition: all 0.5s;
+}
+
+#buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#rounds {
+  width: fit-content;
+  padding: 0.3rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.4rem;
+  border: none;
+  text-align: center;
+  box-shadow: rgba(85, 85, 85, 0.3) 0px 0px 0px 3px;
+}
+
+#playerPick {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 12rem;
+  gap: 2rem;
+  text-align: center;
+}
+#pFrame {
+  padding: 4rem;
+  border: 1px dashed gray;
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+#computerPick {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 12rem;
+  gap: 2rem;
+  text-align: center;
+}
+#cFrame {
+  padding: 4rem;
+  border: 1px dashed gray;
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.textInputPick {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 0.5px solid rgba(128, 128, 128, 0.493);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+#versus {
+  font-weight: bold;
+  font-size: 4rem;
+  color: rgb(49, 49, 49);
+  text-shadow: 0px 0px 5px var(--primary);
+}
+
+/* For Rock, paper and scissor picture */
+
+.rpsImage {
+  width: 8rem;
+}
+
+.hidden {
+  opacity: 0; /* Make it transparent */
+  visibility: hidden; /* Prevent it from blocking interactions */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Transition for opacity and visibility */
+}
+
+.visible {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Allow interactions */
+}
+@media only screen and (max-width: 750px) {
+  #supported {
+    display: none;
+  }
+  #notSupported {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    color: #ececec;
+    text-align: center;
+    padding: 2rem;
+  }
+}
