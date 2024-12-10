@@ -32,18 +32,23 @@ li {
   font-weight: bold;
 }
 
+#gameSummary li {
+  font-weight: normal;
+}
+
 #totalRounds {
   background-color: rgba(165, 42, 42, 0.801);
   color: white;
   border-radius: 1rem;
-  margin: 0 4rem;
-  padding: 0.4rem;
+  margin: 0 1rem;
+  padding: 0.3rem 0;
+  width: auto;
 }
 
 #welcome {
   text-align: center;
-  height: 80vh;
-  margin-top: 4em;
+  height: 70vh;
+  margin-top: 2em;
   line-height: 2rem;
   color: rgb(49, 49, 49);
 }
@@ -55,7 +60,6 @@ li {
 #rps {
   letter-spacing: 1.5rem;
   font-weight: bold;
-  font-size: 1.5rem;
 }
 
 footer {
@@ -67,6 +71,7 @@ footer {
   left: 0;
   width: 100%;
   text-align: center;
+  font-size: 0.8rem;
 }
 #footerDiv {
   text-align: center;
@@ -124,8 +129,8 @@ header {
   position: sticky;
   top: 0;
   background-color: white;
-  height: 15vh;
   text-align: center;
+  padding: 0.2rem 0;
 }
 
 .headerTitle {
@@ -137,7 +142,8 @@ header {
   width: 30%;
   padding: 2rem;
   background-color: var(--primary);
-  padding-top: 4rem;
+  overflow: auto;
+  padding-bottom: 1rem;
 }
 #insideLeft {
   width: 100%;
@@ -175,7 +181,7 @@ header {
   font-size: 0.8rem;
 }
 #scoreSummary {
-  height: 13rem;
+  height: 14rem;
   overflow: auto;
 }
 
@@ -198,6 +204,7 @@ hr.insideBox {
   width: 70%;
   padding-top: 1rem;
   font-size: 0.8rem;
+  overflow: auto;
 }
 
 main {
@@ -371,4 +378,22 @@ main {
 .visible {
   opacity: 1; /* Fully visible */
   visibility: visible; /* Allow interactions */
+}
+@media only screen and (max-width: 750px) {
+  #supported {
+    display: none;
+  }
+  #notSupported {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    color: #ececec;
+    text-align: center;
+    padding: 2rem;
+  }
 }

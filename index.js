@@ -147,9 +147,8 @@
 
 // Redirection;
 
-let dashboardBtn = document.getElementById("playBtn");
+let dashboardBtn = document.getElementById("playBtn")
 
 dashboardBtn.onclick = function () {
-  alert("wew");
-  location.replace("../rps-page.html");
-};
+  location.replace("../rps-page.html")
+}
