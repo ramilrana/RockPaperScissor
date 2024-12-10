@@ -150,5 +150,5 @@
 let dashboardBtn = document.getElementById("playBtn")
 
 dashboardBtn.onclick = function () {
-  location.replace("../rps-page.html")
+  location.replace("https://ramilrana.github.io/RockPaperScissor/rps-page.html")
 }
